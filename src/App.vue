@@ -9,11 +9,11 @@
 </template>
 
 <script>
-  import Navbar from "./components/Navbar.vue";
-  import Slider from "./components/Slider.vue";
-  import GameTypes from "./components/GameTypes.vue";
-  import MatchGame from "./components/MatchGame.vue";
-  import EntertainmentGame from "./components/EntertainmentGame.vue";
+  import Navbar from "@/components/Navbar.vue";
+  import Slider from "@/components/Slider.vue";
+  import GameTypes from "@/components/GameTypes.vue";
+  import MatchGame from "@/components/MatchGame.vue";
+  import EntertainmentGame from "@/components/EntertainmentGame.vue";
 
   export default {
     name: "App",
