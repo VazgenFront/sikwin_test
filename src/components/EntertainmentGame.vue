@@ -14,8 +14,8 @@
             <img :src="ent.image" :alt="ent.img" />
           </div>
           <div class="casino-txt">
-            <p v-if="ent.upText">{{ent.upText}}</p>
-            <span v-if="ent.downText">{{ent.downText}}</span>
+            <p v-if="ent.upText">{{ ent.upText }}</p>
+            <span v-if="ent.downText">{{ ent.downText }}</span>
           </div>
         </div>
       </div>
@@ -65,10 +65,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .section3 {
   background: url(@/assets/background-sec3.png);
-  height: 572px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -79,10 +78,11 @@ export default {
 }
 
 .girl {
-  width: 319px;
+  width: 579px;
 }
 .girl img {
   transition: 1s;
+  width: 100%;
 }
 .girl img:hover {
   transform: translateX(10px);
@@ -90,6 +90,7 @@ export default {
 .casino {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 44px;
 }
 .casino-item {
   width: 290px;
@@ -99,6 +100,10 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.casino-item:hover .casino-txt {
+  color: #ebc86d;
 }
 
 .casino-txt {

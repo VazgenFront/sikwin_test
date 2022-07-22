@@ -27,7 +27,10 @@
     </div>
 
     <nav>
-      <ul class="navbar">
+      <p class="menu" @click="toggleBurger">
+        <i class="fa-solid fa-bars"></i>
+      </p>
+      <ul :class="`${isBurgerOpen ? 'navbar active-menu ' : 'navbar'}`">
         <a href="#" class="app-download">APP DOWNLOAD</a>
         <li class="active">
           <img src="@/assets/home-logo.png" alt="" />
@@ -132,197 +135,215 @@
 </template>
 
 <script>
-  export default {
-    name: "navbar-item",
-  };
+export default {
+  name: "navbar-item",
+
+  data: () => ({
+    isBurgerOpen: false,
+  }),
+
+  methods: {
+    toggleBurger() {
+      this.isBurgerOpen = !this.isBurgerOpen;
+    },
+  },
+};
 </script>
 
-<style scoped>
-  header {
-    background: #000;
-  }
+<style>
+header {
+  background: #000;
+}
 
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-  }
-  .header-left {
-    display: flex;
-    align-items: center;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
 
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
+.header-right {
+  display: flex;
+  align-items: center;
+}
 
-  .social-sites img {
-    width: 30px;
-    margin-right: 15px;
-    cursor: pointer;
-  }
+.social-sites img {
+  width: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+}
 
-  .logo {
-    max-width: 150px;
-  }
-  .logo img {
-    width: 100%;
-    cursor: pointer;
-  }
+.logo {
+  max-width: 150px;
+}
+.logo img {
+  width: 100%;
+  cursor: pointer;
+}
 
-  .login,
-  .register {
-    width: 95px;
-    height: 35px;
-    font-size: 16px;
-    border-radius: 7px;
-    color: #fff;
-    text-align: center;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  .login {
-    background: #ff0000;
-    border: 1px solid #ff0000;
-  }
-  .register {
-    background: #efb158;
-    border: 1px solid #efb158;
-  }
+.login,
+.register {
+  width: 95px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.login {
+  background: #ff0000;
+  border: 1px solid #ff0000;
+}
+.register {
+  background: #efb158;
+  border: 1px solid #efb158;
+}
 
-  .select-lang {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .select-lang span {
-    margin: 0 10px;
-  }
+.select-lang {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.select-lang span {
+  margin: 0 10px;
+}
 
-  nav {
-    border-top: 2px solid #efb158;
-  }
+nav {
+  border-top: 2px solid #efb158;
+}
 
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .navbar a {
-    color: #e2e2e2;
-    font-size: 16px;
-  }
-  .navbar li {
-    width: 130px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.menu {
+  color: #fff;
+  font-size: 30px;
+  text-align: end;
+  margin: 5px 30px 5px 0;
+  display: none;
+}
 
-  .app-download {
-    width: 166px;
-    height: 51px;
-    font-size: 16px;
-    color: rgb(226, 226, 226);
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background: #3e3d3d;
-  }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.navbar a {
+  color: #e2e2e2;
+  font-size: 16px;
+}
+.navbar li {
+  width: 130px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .active {
-    color: #fff;
-    background: #efb158;
-  }
-  .active img {
-    margin-right: 5px;
-  }
+.app-download {
+  width: 166px;
+  height: 51px;
+  font-size: 16px;
+  color: rgb(226, 226, 226);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #3e3d3d;
+}
 
-  .active:hover {
-    background: #3e3d3d;
-  }
+.active {
+  color: #fff;
+  background: #efb158;
+}
+.active img {
+  margin-right: 5px;
+}
 
-  .nav-info {
-    width: 100%;
-    height: 0;
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    background: url(@/assets/hidden-bg.png);
-    overflow: hidden;
-    transition: 0.3s;
-    z-index: 9;
-  }
+.active:hover {
+  background: #3e3d3d;
+}
 
-  .nav-info img {
-    width: 160px;
-  }
+.nav-info {
+  width: 100%;
+  height: 0;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background: url(@/assets/hidden-bg.png);
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 9;
+}
 
-  .hidden-menu {
-    height: 250px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hidden-menu2 {
-    margin-left: -100px;
-  }
+.nav-info img {
+  width: 160px;
+}
 
-  .div-img {
-    width: 220px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .div-img:hover {
-    background: #ffffff58;
-  }
+.hidden-menu {
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden-menu2 {
+  margin-left: -100px;
+}
 
-  .live-casino:hover,
-  .sport:hover,
-  .lottery:hover,
-  .patti:hover,
-  .cardgame:hover,
-  .slot:hover,
-  .prom:hover,
-  .customer:hover {
-    background: #3e3d3d;
-  }
-  .live-casino:hover .icon,
-  .sport:hover .icon,
-  .lottery:hover .icon,
-  .patti:hover .icon,
-  .cardgame:hover .icon,
-  .slot:hover .icon,
-  .prom:hover .icon,
-  .customer:hover .icon {
-    display: block;
-    background: #3e3d3d;
-  }
-  .live-casino:hover .nav-info,
-  .sport:hover .nav-info,
-  .lottery:hover .nav-info {
-    height: 250px;
-  }
+.div-img {
+  width: 220px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div-img:hover {
+  background: #ffffff58;
+}
 
-  .icon {
-    display: none;
-    margin-right: 5px;
-    cursor: pointer;
-  }
+.live-casino:hover,
+.sport:hover,
+.lottery:hover,
+.patti:hover,
+.cardgame:hover,
+.slot:hover,
+.prom:hover,
+.customer:hover {
+  background: #3e3d3d;
+}
+.live-casino:hover .icon,
+.sport:hover .icon,
+.lottery:hover .icon,
+.patti:hover .icon,
+.cardgame:hover .icon,
+.slot:hover .icon,
+.prom:hover .icon,
+.customer:hover .icon {
+  display: block;
+  background: #3e3d3d;
+}
+.live-casino:hover .nav-info,
+.sport:hover .nav-info,
+.lottery:hover .nav-info {
+  height: 250px;
+}
 
-  li {
-    list-style: none;
-  }
+.icon {
+  display: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
 </style>

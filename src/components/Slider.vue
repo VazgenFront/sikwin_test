@@ -4,7 +4,7 @@
     :arrows="false"
     :autoplay="true"
     fixed-height="380px"
-    :transition-speed="100"
+    transition-speed="100"
     :touchable="false"
   >
     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .thumbnails {
   margin: auto;
   max-width: 300px;
@@ -50,7 +50,7 @@ export default {
   border-color: #000;
 }
 
-.vueperslides__bullet {
+.vueperslides__bullet .default  {
   width: 15px;
   height: 15px;
 }

@@ -41,65 +41,69 @@ export default {
 };
 </script>
 
-<style scoped>
-  .section1 {
-    background: url(@/assets/section-bg.png);
-    background-size: cover;
-    background-position: -195px 0px;
-    background-repeat: no-repeat;
-    background-color: #000c;
-    width: 100%;
-    height: 419px;
-  }
+<style >
+.section1 {
+  background: url(@/assets/section-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000c;
+  width: 100%;
+}
 
-  .div-section1 {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
-  }
-  .section1-img {
-    position: relative;
-    cursor: pointer;
-  }
+.div-section1 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.section1-img {
+  position: relative;
+  cursor: pointer;
+  margin: 0 5px 40px;
+}
 
-  .hidden-text {
-    width: 202px;
-    line-height: 51px;
-    text-align: center;
-    font-size: 16px;
-    font-family: "Adobe Heiti Std";
-    color: #ebc86d;
-    background: #0000008c;
-    border-radius: 8px;
-    border: 1px solid #ebc86d;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -101px;
-    display: none;
-  }
-  .section1-img:hover img {
-    filter: grayscale(0.6);
-  }
-  .section1-img:hover .hidden-text {
-    display: block;
-  }
+.section1-img img {
+  width: 100%;
+}
 
-  .item-name {
-    width: 143px;
-    height: 51px;
-    background: url(@/assets/item-name.png);
-    font-size: 19px;
-    color: #712213;
-    font-style: italic;
-    justify-content: center;
-    text-align: center;
-    line-height: 51px;
-    position: absolute;
-    bottom: -35px;
-    right: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-  }
+.hidden-text {
+  width: 202px;
+  line-height: 51px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Adobe Heiti Std";
+  color: #ebc86d;
+  background: #0000008c;
+  border-radius: 8px;
+  border: 1px solid #ebc86d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -101px;
+  display: none;
+}
+.section1-img:hover img {
+  filter: grayscale(0.6);
+}
+.section1-img:hover .hidden-text {
+  display: block;
+}
+
+.item-name {
+  width: 143px;
+  height: 51px;
+  background: url(@/assets/item-name.png);
+  font-size: 19px;
+  color: #712213;
+  font-style: italic;
+  justify-content: center;
+  text-align: center;
+  line-height: 51px;
+  position: absolute;
+  bottom: -35px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
 </style>
